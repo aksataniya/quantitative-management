@@ -1,0 +1,24 @@
+---
+title: "QMM_Final"
+author: "Aksa Taniya"
+date: "2022-12-13"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Final Exam - Student Allocation
+
+In this assignment, we are tasked with assigning 12 students to four groups, 3 students to a group, and based off of three factors that we decide. 
+
+```{r students}
+library(lpSolveAPI)
+Ip_staff <- read.lp("aaksatan_F.lp")
+Ip_staff
+solve(Ip_staff)
+get.objective(Ip_staff)
+get.variables(Ip_staff)
+get.constraints(Ip_staff)
+```
